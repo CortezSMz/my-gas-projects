@@ -1,0 +1,22 @@
+{
+  "name": "my-gas-projects",
+  "version": "0.1.0",
+  "description": "Personal collection of Google Apps Script Projects that I've created, that I use on the daily base.",
+  "author": "CortezSMz",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "lintfix": "eslint . --ext .ts --fix"
+  },
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.45"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-marine": "^9.3.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}
