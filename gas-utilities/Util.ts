@@ -1,5 +1,8 @@
 namespace Util {
   export let isTriggerInstalled: (callbackName: string) => boolean;
+  export let parseConfig: (
+    sheet: GoogleAppsScript.Spreadsheet.Sheet,
+  ) => Record<string, string>;
 }
 
 function isTriggerInstalled(callbackName: string): boolean {
@@ -8,4 +11,19 @@ function isTriggerInstalled(callbackName: string): boolean {
   );
 
   return spreadsheetTriggers.includes(callbackName);
+}
+
+function parseConfig(
+  sheet: GoogleAppsScript.Spreadsheet.Sheet,
+): Record<string, string> {
+  return sheet
+    .getRange(1, 1, sheet.getLastRow(), sheet.getLastColumn())
+    .getValues()
+    .reduce(
+      (a, v) => ({
+        ...a,
+        [v[0]]: v[1],
+      }),
+      {},
+    );
 }
