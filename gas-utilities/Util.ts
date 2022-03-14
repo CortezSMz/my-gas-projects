@@ -16,6 +16,7 @@ function isTriggerInstalled(callbackName: string): boolean {
 function parseConfig(
   sheet: GoogleAppsScript.Spreadsheet.Sheet,
 ): Record<string, string> {
+  if (!sheet || sheet.getLastRow() === 0) return {};
   return sheet
     .getRange(1, 1, sheet.getLastRow(), sheet.getLastColumn())
     .getValues()
