@@ -25,7 +25,14 @@ function populate() {
         .setValues([['Nome', 'SEDUC']])
         .setFontWeight('bold');
 
-      sheet.getRange(3, 1, funcionarios.length, 2).setValues(funcionarios);
+      sheet.getRange(3, 1, funcionarios.length, 2).setValues(
+        funcionarios.map(([nome, seduc]) => {
+          return [
+            nome,
+            `=HYPERLINK("https://www.documentos.spsempapel.sp.gov.br/siga/app/pessoa/exibir?sigla=${seduc}","${seduc}")`,
+          ];
+        }),
+      );
 
       sheet
         .getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn())
