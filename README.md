@@ -12,4 +12,4 @@ A working Calendar Scheduler Visualization using [Google Data Studio](https://da
 
 ## 3. [Scrap Numeros SEDUC ITS](/scrap-numeros-seduc-its)
 
-Small web scrap automation script.
+Small web scrap automation script that authenticates, scrap information and writes back on a Google Sheet.
