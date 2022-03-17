@@ -4,9 +4,15 @@ A few useful utility methods for Google Apps Script.
 
 ## Reference
 
-### isTriggerInstalled: (callbackName: string) => boolean
+### isTriggerInstalled(callbackName)
 
-Checks if Trigger is already installed. Returns true if a trigger with that same callback name is found on the project it was called.
+Checks if Trigger is already installed. Returns `true` if a trigger with that same callback name is found on the project it was called.
+
+| Parameter    | Type                                                                                              | Description                    |
+| ------------ | ------------------------------------------------------------------------------------------------- | ------------------------------ |
+| callbackName | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | The callback name to look for. |
+
+Returns: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
 <details>
 <summary> Examples</summary>
@@ -18,9 +24,15 @@ Util.isTriggerInstalled('doStuff');
 
 </details>
 
-### parseConfig: (sheet: GoogleAppsScript.Spreadsheet.Sheet) => Record<string, string>
+### parseConfig(sheet)
 
-Parse sheet as `object` of type `Record<string, string>`.
+Parse sheet as [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)<[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>.
+
+| Parameter | Type                                                                           | Description         |
+| --------- | ------------------------------------------------------------------------------ | ------------------- |
+| sheet     | [Sheet](https://developers.google.com/apps-script/reference/spreadsheet/sheet) | The sheet to parse. |
+
+Returns: [Record](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)<[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>
 
 <details>
 <summary> Examples</summary>
@@ -33,6 +45,7 @@ Configs sheet:
 
 ```js
 const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+
 const configSheet = spreadsheet.getSheetByName('Configs');
 
 const configParsed = Util.parseConfig(configSheet);
