@@ -13,3 +13,7 @@ A working Calendar Scheduler Visualization using [Google Data Studio](https://da
 ## 3. [Scrap Numeros SEDUC ITS](/scrap-numeros-seduc-its)
 
 Small web scrap automation script that authenticates, scrap information and writes back on a Google Sheet.
+
+## 4. [Split Sheets by Column](/split-sheets-by-column)
+
+Split one or more [Google Sheets](https://www.google.com/sheets/about/) based on column content.
